@@ -1,4 +1,4 @@
 interface:
   display_name: "Excel Dashboard AI"
   short_description: "Build refreshable Excel BI with mandatory intake"
-  default_prompt: "Use $excel-dashboard-ai-skill to inspect my Excel data first. Do not build immediately. Ask the required intake questions, propose the right dashboard blueprint if needed, wait for my answers, then build a refreshable Power Query + Power Pivot + DAX + PivotChart executive dashboard."
+  default_prompt: "Use $excel-dashboard-ai-skill to inspect my Excel data first. Your first substantive reply must be intake questions only. Do not build immediately. Ask the required intake questions, propose the right dashboard blueprint if needed, wait for my answers, then build a refreshable Power Query + Power Pivot + DAX + PivotChart executive dashboard."
