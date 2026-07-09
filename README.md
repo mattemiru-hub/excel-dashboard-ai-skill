@@ -187,7 +187,7 @@ Read these files before modifying the behavior:
 
 Current public release target:
 
-- `v1.0.1` - clarification-first release with stronger ask-before-guess behavior
+- `v1.0.2` - intake-hardening release with blueprint gating, fail-safe checks, and clearer capability boundaries
 
 ## Notes
 
