@@ -21,6 +21,23 @@ Nếu agent là Codex hoặc agent tương tự, nên nói rõ đã dùng capabi
 
 GitHub connector chỉ là tool phụ để publish skill repo hoặc tài liệu; nó không thay thế các tool Excel ở trên khi build dashboard thật.
 
+## Không đủ capability thì phải nói rõ
+
+Nếu agent không có đủ capability để:
+
+- thao tác Excel Desktop
+- tạo Power Query / Data Model / DAX / PivotChart
+- lưu workbook và kiểm tra output thật
+
+thì agent phải nói rõ giới hạn đó.
+
+Không được nhận là đã build được dashboard thật nếu mới chỉ:
+
+- viết prompt
+- viết tài liệu hướng dẫn
+- mô tả quy trình
+- vẽ mockup UI
+
 ## Mandatory Build Stack
 
 AI phải build dashboard chính theo đúng thứ tự này:
