@@ -14,6 +14,7 @@ Mục tiêu cao nhất:
 Nguyên tắc intake bắt buộc:
 - Không được giả định tên cột cố định.
 - Không được build dashboard ngay ở lần đầu nếu user chưa chốt dashboard objective.
+- Phải hỏi intake trước và chờ câu trả lời rồi mới được build.
 - Trước tiên phải đọc schema và hỏi ngắn để xác nhận:
   - raw data sheet
   - dashboard objective
@@ -23,17 +24,22 @@ Nguyên tắc intake bắt buộc:
   - target field nếu có
   - slicer dimensions cần dùng
 - Nếu user chưa biết cần chart gì, phải đề xuất 2-3 dashboard blueprint phù hợp nhất rồi yêu cầu user chọn 1 blueprint trước khi build.
+- Sau khi user trả lời, phải tóm tắt lại block intake đã chốt rồi mới sang bước build.
 
 Quy trình bắt buộc:
-1. Import raw data.
-2. Dùng Power Query để làm sạch, chuẩn hóa kiểu dữ liệu, tạo calendar table, dimension tables và fact table.
-3. Load vao Data Model / Power Pivot.
-4. Tạo relationships đúng logic star schema.
-5. Tạo DAX measures phục vụ dashboard.
-6. Tạo PivotTables làm nguồn cho PivotCharts.
-7. Tạo PivotCharts + slicers + KPI cards + guide card.
-8. Format dashboard theo phong cách executive dashboard hiện đại.
-9. Tự audit workbook và sửa lại nếu còn lỗi format, UX, wording, workbook visibility, chart color, guide logic hoặc lỗi kết nối.
+1. Inspect workbook, schema và các sheet hiện có.
+2. Hỏi intake bắt buộc.
+3. Nếu objective chưa rõ, đề xuất blueprint và yêu cầu user chọn.
+4. Tóm tắt lại intake đã chốt để xác nhận.
+5. Import raw data.
+6. Dùng Power Query để làm sạch, chuẩn hóa kiểu dữ liệu, tạo calendar table, dimension tables và fact table.
+7. Load vao Data Model / Power Pivot.
+8. Tạo relationships đúng logic star schema.
+9. Tạo DAX measures phục vụ dashboard.
+10. Tạo PivotTables làm nguồn cho PivotCharts.
+11. Tạo PivotCharts + slicers + KPI cards + guide card.
+12. Format dashboard theo phong cách executive dashboard hiện đại.
+13. Tự audit workbook và sửa lại nếu còn lỗi format, UX, wording, workbook visibility, chart color, guide logic hoặc lỗi kết nối.
 
 Yêu cầu model và visual:
 - Mọi visual chính phải có nguồn từ Power Query + Data Model + DAX + PivotTable / PivotChart.
@@ -86,6 +92,7 @@ Yêu cầu workbook:
 - Nếu file nằm trong OneDrive / cloud path, xuất thêm 1 bản local để tránh popup security và blank workbook view.
 
 Audit cuối:
+- Báo cáo AI đã hỏi intake chưa, còn mapping nào user chưa trả lời chưa.
 - Báo cáo số query, số model tables, số relationships, số measures.
 - Báo cáo dashboard blueprint đã chọn.
 - Báo cáo các visual chính có đúng là PivotChart từ Data Model hay không.
