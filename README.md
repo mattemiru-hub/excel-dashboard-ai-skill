@@ -10,7 +10,7 @@ GitHub-ready skill package for building Excel executive dashboards that feel clo
 2. Point Codex to your workbook and call `$excel-dashboard-ai-skill`.
 3. Let the skill rebuild the data stack and apply the approved executive dashboard style.
 
-This skill is designed around a golden-reference FMCG dashboard with:
+This skill is designed around a golden-reference FMCG dashboard, but it now supports a discovery-first flow for unfamiliar datasets:
 
 - Power Query for data shaping
 - Power Pivot / Data Model for relationships
@@ -21,13 +21,17 @@ This skill is designed around a golden-reference FMCG dashboard with:
 - section bars
 - guide card
 - 75% zoom working view
-- clarification-first behavior when workbook mappings are ambiguous
+- clarification-first behavior before the first build
+- blueprint selection when the user does not yet know what the dashboard should analyze
 
 ## What this repo gives you
 
 - a Codex skill entrypoint in `SKILL.md`
 - style and UX rules in `references/`
 - clarification rules that force AI to ask before guessing critical mappings
+- a blueprint router for choosing the right dashboard type
+- a tooling contract that tells other AIs exactly which Excel tools must be used
+- environment prerequisites so other AIs know which runtime capabilities are required
 - a reusable Vietnamese prompt template
 - a Vietnamese overview in `README_vi.md`
 - practical usage examples in `examples/`
@@ -52,8 +56,10 @@ This skill is designed around a golden-reference FMCG dashboard with:
 │   └── executive-dashboard-preview.png
 ├── references/
 │   ├── clarification-rules-vi.md
+│   ├── dashboard-blueprint-router-vi.md
 │   ├── golden-reference-spec-vi.md
 │   ├── prompt-template-vi.md
+│   ├── tooling-contract-vi.md
 │   └── qa-checklist-vi.md
 ├── scripts/
 │   ├── apply_golden_reference_style.py
@@ -68,7 +74,9 @@ This skill is designed around a golden-reference FMCG dashboard with:
 Use this skill when you want to:
 
 - rebuild an Excel dashboard from raw data
+- guide a non-Excel user through intake before the first build
 - convert an existing workbook into a refreshable BI-style dashboard
+- propose the right dashboard blueprint for an unfamiliar dataset
 - force the output to follow an approved executive layout
 - audit slicers, colors, workbook visibility, zoom, guide-card logic, or chart UX
 - generate a reusable prompt that another AI can follow
@@ -110,10 +118,13 @@ Use this when you want another AI or Codex session to reproduce the same dashboa
 Use $excel-dashboard-ai-skill to turn my existing Excel workbook into a premium executive dashboard that feels like a Power BI cockpit, not an Excel report.
 
 Requirements:
+- Inspect the schema first and ask the required intake questions before building the first dashboard
+- If I do not know what charts I need, propose 2-3 dashboard blueprints and ask me to choose one
 - Use Power Query for all source shaping
 - Use Power Pivot / Data Model relationships
 - Create DAX measures for all KPI and chart logic
 - Use PivotTables + PivotCharts for the main dashboard visuals
+- Do not use normal charts or non-model shortcuts for the main dashboard
 - Keep the dashboard refreshable when raw data changes and I press Refresh All
 - Build a left slicer rail with Year, Month, Region, Channel, Category, Area Manager, and Sales Rep when those fields exist
 - Keep monthly trend meaningful: month slicer must not break the trend story for the selected year
@@ -140,8 +151,10 @@ Deliverables:
 The skill intentionally preserves these rules:
 
 - Power BI-like executive dashboard feel
+- discovery-first intake for unfamiliar datasets
 - Pivot-based visuals for the main dashboard
 - clarification-first behavior when raw field mapping is ambiguous
+- blueprint selection before the first build when the dashboard objective is not yet clear
 - KPI band colors only for attainment status
 - metric palette for `Channel Efficiency | Gross Margin vs Trade Spend`
 - stable chart colors under slicers
@@ -152,8 +165,10 @@ The skill intentionally preserves these rules:
 Read these files before modifying the behavior:
 
 - `references/clarification-rules-vi.md`
+- `references/dashboard-blueprint-router-vi.md`
 - `references/golden-reference-spec-vi.md`
 - `references/prompt-template-vi.md`
+- `references/tooling-contract-vi.md`
 - `references/qa-checklist-vi.md`
 
 ## Repo extras
