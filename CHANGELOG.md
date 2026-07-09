@@ -10,6 +10,8 @@ All notable changes to this skill package will be tracked here.
 - `references/tooling-contract-vi.md` to tell other AIs exactly which Excel tools must be used and which shortcuts are forbidden
 - `references/intake-form-vi.md` to standardize the pre-build intake questions on unfamiliar datasets
 - `references/first-response-contract-vi.md` to force the first substantive response to stay intake-only on unfamiliar datasets
+- `companion-skills/excel-dashboard-ai-intake/` as a separate intake-only companion skill
+- `AGENTS.md` as a repo-level ask-first contract for repo-aware coding agents
 
 ### Changed
 
@@ -18,7 +20,7 @@ All notable changes to this skill package will be tracked here.
 - updated the README files to explain the public-share discovery-first workflow
 - expanded the tooling contract so other AIs know both the mandatory Excel stack and the required runtime capabilities
 - added fail-safe wording so agents must ask first, summarize intake, and admit when they only produced guidance instead of a real Excel build
-- tightened the first-build flow so the first substantive response must be questions-only instead of build-first
+- updated the local install script to install both the build skill and the intake companion skill
 
 ### Removed
 
