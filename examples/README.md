@@ -2,6 +2,32 @@
 
 This folder explains how to apply `excel-dashboard-ai-skill` on real Excel dashboard tasks.
 
+## Recommended two-step flow
+
+For unfamiliar workbooks, use:
+
+1. `$excel-dashboard-ai-intake`
+2. `$excel-dashboard-ai-skill`
+
+Suggested intake prompt:
+
+```text
+Use $excel-dashboard-ai-intake on my workbook.
+
+Your first substantive reply must be intake questions only.
+If my dashboard objective is unclear, propose 2-3 dashboard blueprints.
+After I answer, produce a short confirmed handoff summary and stop.
+```
+
+Then use the handoff summary with the build skill:
+
+```text
+Use $excel-dashboard-ai-skill on my workbook.
+
+Build the dashboard from this confirmed intake summary:
+[paste intake summary here]
+```
+
 ## Example 1 - Rebuild an existing sales workbook
 
 Use case:
