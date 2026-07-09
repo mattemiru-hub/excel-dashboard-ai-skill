@@ -6,6 +6,7 @@
 
 ## Skill này dùng để làm gì
 
+- Có thêm 1 companion skill chỉ để intake trước khi build
 - Tái cấu trúc workbook Excel thành dashboard executive
 - Dùng Power Query để xử lý và làm sạch dữ liệu
 - Dùng Data Model / Power Pivot để tạo quan hệ bảng
@@ -34,6 +35,12 @@ Dùng skill này khi bạn muốn:
 - ép AI phải hỏi lại đúng các mapping quan trọng trước khi build
 - buộc AI nói rõ khi nó chưa thật sự build workbook trong Excel mà mới chỉ dừng ở mức hướng dẫn
 
+Dùng companion intake skill khi bạn muốn:
+
+- ép phản hồi đầu tiên chỉ được hỏi intake
+- chốt brief trước khi bắt đầu build
+- truyền 1 handoff summary gọn vào skill build chính
+
 ## Cách dùng nhanh
 
 1. Cài skill vào thư mục skill local bằng `scripts/install_local_skill.ps1`
@@ -49,6 +56,11 @@ Dùng skill này khi bạn muốn:
    - PivotCharts
    - Slicers
    - Dashboard layer
+
+Script cài đặt sẽ cài cả:
+
+- `excel-dashboard-ai-skill`
+- `excel-dashboard-ai-intake`
 
 ## Đầu ra mong đợi
 
