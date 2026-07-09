@@ -14,6 +14,7 @@ Vì vậy, ở lần build đầu tiên trên một dataset lạ, AI phải mặ
 - rồi mới được build query, measure, PivotTable, PivotChart, slicer, và dashboard
 
 Form intake mặc định nên lấy từ `references/intake-form-vi.md`.
+Format của phản hồi đầu tiên nên lấy từ `references/first-response-contract-vi.md`.
 
 ## Khi nào phải hỏi lại
 
@@ -59,6 +60,7 @@ Khi cần hỏi lại, AI nên hỏi theo thứ tự:
 ## Cơ chế fail-safe
 
 Nếu đây là lần build đầu tiên trên dataset lạ, AI phải coi việc hỏi intake là điều kiện bắt buộc để được phép build.
+Đồng thời, phản hồi substantive đầu tiên phải là block hỏi intake, không được là block build.
 
 Không được lấy các lý do sau để bỏ qua intake:
 
@@ -118,6 +120,7 @@ Sau khi user trả lời, AI nên tóm tắt lại 1 block xác nhận trước 
 - không hỏi lại những thứ đã được golden reference cố định
 - sau khi user trả lời, AI phải bám đúng câu trả lời đó trong toàn bộ phần build
 - nếu user trả lời thiếu, AI phải hỏi bù đúng phần còn thiếu thay vì tự đoán tiếp
+- ở phản hồi đầu tiên, AI không được chen thêm plan build hay mô tả output như thể đã chốt
 
 ## Quy tắc dừng
 
@@ -131,5 +134,6 @@ Nếu chưa rõ các mapping bắt buộc, AI không được:
 - tự tạo chart chỉ vì thấy cột có vẻ hợp lý
 - tự quyết định slicer mặc định nếu user chưa chốt objective
 - tự nói như thể đã được intake đầy đủ khi thực tế chưa hỏi
+- dùng ngay phản hồi đầu tiên để cắm đầu build dashboard
 
 Phải hỏi lại trước rồi mới làm tiếp.
