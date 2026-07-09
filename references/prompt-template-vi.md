@@ -11,9 +11,18 @@ Mục tiêu cao nhất:
 - Tái tạo thật sát bố cục, logic, màu sắc, trải nghiệm và hành vi của golden reference dashboard đã được duyệt.
 - Nếu dữ liệu đầu vào khác schema, vẫn giữ nguyên ngôn ngữ thiết kế của golden reference; chỉ thay đổi logic map dữ liệu, không đổi style.
 
-Nguyên tắc trung thực:
+Nguyên tắc intake bắt buộc:
 - Không được giả định tên cột cố định.
-- Phải tự đọc schema, suy luận mapping field, và ghi rõ field nào map được, field nào thiếu.
+- Không được build dashboard ngay ở lần đầu nếu user chưa chốt dashboard objective.
+- Trước tiên phải đọc schema và hỏi ngắn để xác nhận:
+  - raw data sheet
+  - dashboard objective
+  - audience
+  - date field
+  - actual metric field
+  - target field nếu có
+  - slicer dimensions cần dùng
+- Nếu user chưa biết cần chart gì, phải đề xuất 2-3 dashboard blueprint phù hợp nhất rồi yêu cầu user chọn 1 blueprint trước khi build.
 
 Quy trình bắt buộc:
 1. Import raw data.
@@ -29,6 +38,8 @@ Quy trình bắt buộc:
 Yêu cầu model và visual:
 - Mọi visual chính phải có nguồn từ Power Query + Data Model + DAX + PivotTable / PivotChart.
 - Không dùng chart thường để thay visual chính.
+- Không dùng PivotTable không đi qua Data Model để thay cho model-based dashboard.
+- Không dùng worksheet formula rời rạc để thay cho DAX business logic.
 - Nếu dữ liệu đủ trường, tạo tối thiểu các measure tương đương:
   Total Revenue
   Target Revenue
@@ -42,8 +53,10 @@ Yêu cầu giao diện:
 - Giống Power BI executive dashboard hiện đại.
 - Bên trái là slicer panel.
 - Trên cùng là KPI cards.
-- Giữa là trend chart và region performance.
-- Dưới là category, channel và sales rep performance.
+- Sau khi user chốt blueprint, map cụm chart theo blueprint đó.
+- Nếu blueprint là sales executive thì:
+  - Giữa là trend chart và region performance.
+  - Dưới là category, channel và sales rep performance.
 - Toàn bộ dashboard fit đẹp ở zoom 75%.
 
 Quy tắc màu sắc:
@@ -74,6 +87,8 @@ Yêu cầu workbook:
 
 Audit cuối:
 - Báo cáo số query, số model tables, số relationships, số measures.
+- Báo cáo dashboard blueprint đã chọn.
+- Báo cáo các visual chính có đúng là PivotChart từ Data Model hay không.
 - Kiểm tra không có `#REF!`, `#VALUE!`, `#DIV/0!`.
 - Xuất preview dashboard.
 - Tự chấm điểm giao diện theo thang 10.
