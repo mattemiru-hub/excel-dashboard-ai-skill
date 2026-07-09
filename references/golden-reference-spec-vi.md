@@ -4,6 +4,16 @@
 
 Tái tạo một executive dashboard trong Excel có trải nghiệm gần Power BI, nhưng vẫn refresh được bằng Power Query, Power Pivot, DAX, PivotTable, PivotChart và slicer.
 
+## Phạm vi đúng của golden reference
+
+Golden reference này là visual contract sau khi AI đã:
+
+- chốt dashboard objective
+- chốt blueprint phân tích
+- chốt field mapping quan trọng
+
+Nó không thay thế bước intake. Nếu dataset lạ hoặc user chưa biết muốn phân tích gì, AI phải intake và chọn blueprint trước rồi mới áp visual contract này.
+
 ## Hợp đồng về bố cục
 
 - Header nền navy, tiêu đề dashboard rõ, subtitle nhỏ, thông tin as-of nằm bên phải.
@@ -26,6 +36,7 @@ Tái tạo một executive dashboard trong Excel có trải nghiệm gần Power
   - PivotTable / PivotChart
 - Không dùng chart thường để thay cho dashboard chính.
 - Không cố định tên cột. Luôn map tên cột gốc sang vai trò nghiệp vụ.
+- Nếu dataset không phải sales/FMCG thuần, được phép đổi KPI và logic chart theo blueprint đã chốt, nhưng vẫn phải giữ build stack và visual quality bar.
 
 ## Hợp đồng về màu sắc
 
@@ -72,6 +83,15 @@ Không dùng màu KPI band cho chart này.
 - Revenue by Category
 - Channel Efficiency
 - Top Sales Reps
+
+## Nếu blueprint không phải sales executive
+
+Các visual ưu tiên bên trên là mặc định cho blueprint sales executive.
+
+Nếu user chọn blueprint khác, AI phải:
+
+- thay KPI và chart theo blueprint đó
+- vẫn giữ nguyên kỷ luật về layout, spacing, slicer rail, KPI row, section bars, readability, zoom, và Pivot-based architecture
 
 ## Guide card đúng
 
