@@ -29,6 +29,7 @@ This skill is designed around a golden-reference FMCG dashboard, but it now supp
 - a Codex skill entrypoint in `SKILL.md`
 - style and UX rules in `references/`
 - clarification rules that force AI to ask before guessing critical mappings
+- a first-response contract so the first real reply is intake-only instead of build-first
 - a standard intake form so AI asks the same core questions before building
 - a blueprint router for choosing the right dashboard type
 - a tooling contract that tells other AIs exactly which Excel tools must be used
@@ -58,6 +59,7 @@ This skill is designed around a golden-reference FMCG dashboard, but it now supp
 ├── references/
 │   ├── clarification-rules-vi.md
 │   ├── dashboard-blueprint-router-vi.md
+│   ├── first-response-contract-vi.md
 │   ├── golden-reference-spec-vi.md
 │   ├── intake-form-vi.md
 │   ├── prompt-template-vi.md
@@ -169,6 +171,7 @@ Read these files before modifying the behavior:
 
 - `references/clarification-rules-vi.md`
 - `references/dashboard-blueprint-router-vi.md`
+- `references/first-response-contract-vi.md`
 - `references/golden-reference-spec-vi.md`
 - `references/intake-form-vi.md`
 - `references/prompt-template-vi.md`
