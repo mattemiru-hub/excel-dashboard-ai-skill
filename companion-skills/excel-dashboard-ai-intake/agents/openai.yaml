@@ -1,0 +1,4 @@
+interface:
+  display_name: "Excel Dashboard Intake"
+  short_description: "Ask first, build later"
+  default_prompt: "Use $excel-dashboard-ai-intake on my workbook. Your first substantive reply must be intake questions only. If my dashboard objective is unclear, propose 2-3 dashboard blueprints, wait for my answers, then produce a short confirmed handoff summary and stop."
