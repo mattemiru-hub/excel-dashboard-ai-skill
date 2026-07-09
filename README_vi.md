@@ -73,6 +73,7 @@ Dùng skill này khi bạn muốn:
 
 - `v1.0.0`: bản public-ready đầu tiên của repo skill này
 - `v1.0.1`: bản bổ sung cơ chế hỏi lại trước khi đoán các mapping quan trọng
+- `v1.0.2`: bản hardening intake, chặn build khi chưa hỏi đủ, và nói rõ ranh giới capability khi AI chưa thật sự build workbook trong Excel
 
 ## Lưu ý
 
