@@ -8,6 +8,7 @@ All notable changes to this skill package will be tracked here.
 
 - `references/dashboard-blueprint-router-vi.md` to force blueprint selection on unfamiliar datasets
 - `references/tooling-contract-vi.md` to tell other AIs exactly which Excel tools must be used and which shortcuts are forbidden
+- `references/intake-form-vi.md` to standardize the pre-build intake questions on unfamiliar datasets
 
 ### Changed
 
@@ -15,6 +16,7 @@ All notable changes to this skill package will be tracked here.
 - updated the prompt surface to require blueprint selection and Power Query + Data Model + DAX + PivotChart architecture
 - updated the README files to explain the public-share discovery-first workflow
 - expanded the tooling contract so other AIs know both the mandatory Excel stack and the required runtime capabilities
+- added fail-safe wording so agents must ask first, summarize intake, and admit when they only produced guidance instead of a real Excel build
 
 ### Removed
 
