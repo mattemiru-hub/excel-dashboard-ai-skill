@@ -4,6 +4,7 @@ Dùng checklist này trước khi chốt workbook:
 
 ## Intake và logic build
 
+- Phản hồi substantive đầu tiên đúng là questions-only theo `first-response-contract`
 - Đã hỏi intake ở lần build đầu tiên trên dataset lạ
 - Đã chốt raw data sheet
 - Đã chốt dashboard objective
