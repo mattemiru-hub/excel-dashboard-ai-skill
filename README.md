@@ -27,6 +27,8 @@ This skill is designed around a golden-reference FMCG dashboard, but it now supp
 ## What this repo gives you
 
 - a Codex skill entrypoint in `SKILL.md`
+- a repo-level `AGENTS.md` contract for repo-aware coding agents
+- an intake-only companion skill in `companion-skills/excel-dashboard-ai-intake/`
 - style and UX rules in `references/`
 - clarification rules that force AI to ask before guessing critical mappings
 - a first-response contract so the first real reply is intake-only instead of build-first
@@ -48,9 +50,18 @@ This skill is designed around a golden-reference FMCG dashboard, but it now supp
 ```text
 .
 ├── SKILL.md
+├── AGENTS.md
 ├── README_vi.md
 ├── agents/
 │   └── openai.yaml
+├── companion-skills/
+│   └── excel-dashboard-ai-intake/
+│       ├── SKILL.md
+│       ├── agents/
+│       │   └── openai.yaml
+│       └── references/
+│           ├── handoff-summary-template-vi.md
+│           └── question-block-template-vi.md
 ├── examples/
 │   └── README.md
 ├── sample-output/
@@ -87,6 +98,12 @@ Use this skill when you want to:
 - force the AI to ask the right clarification questions instead of guessing business-critical fields
 - make the AI admit when it only wrote guidance and did not actually build the workbook in Excel
 
+Use the companion intake skill when you want to:
+
+- force the first real reply to stay questions-only
+- collect a confirmed intake summary before any build happens
+- hand off a safer brief into the main dashboard-build skill
+
 ## Install for Codex
 
 From this repo:
@@ -99,6 +116,12 @@ That mirrors the repo into:
 
 ```text
 C:\Users\admin\.codex\skills\excel-dashboard-ai-skill
+```
+
+and also installs the intake companion skill into:
+
+```text
+C:\Users\admin\.codex\skills\excel-dashboard-ai-intake
 ```
 
 ## Main scripts
@@ -169,6 +192,7 @@ The skill intentionally preserves these rules:
 
 Read these files before modifying the behavior:
 
+- `AGENTS.md`
 - `references/clarification-rules-vi.md`
 - `references/dashboard-blueprint-router-vi.md`
 - `references/first-response-contract-vi.md`
