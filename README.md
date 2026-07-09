@@ -29,6 +29,7 @@ This skill is designed around a golden-reference FMCG dashboard, but it now supp
 - a Codex skill entrypoint in `SKILL.md`
 - style and UX rules in `references/`
 - clarification rules that force AI to ask before guessing critical mappings
+- a standard intake form so AI asks the same core questions before building
 - a blueprint router for choosing the right dashboard type
 - a tooling contract that tells other AIs exactly which Excel tools must be used
 - environment prerequisites so other AIs know which runtime capabilities are required
@@ -58,6 +59,7 @@ This skill is designed around a golden-reference FMCG dashboard, but it now supp
 │   ├── clarification-rules-vi.md
 │   ├── dashboard-blueprint-router-vi.md
 │   ├── golden-reference-spec-vi.md
+│   ├── intake-form-vi.md
 │   ├── prompt-template-vi.md
 │   ├── tooling-contract-vi.md
 │   └── qa-checklist-vi.md
@@ -81,6 +83,7 @@ Use this skill when you want to:
 - audit slicers, colors, workbook visibility, zoom, guide-card logic, or chart UX
 - generate a reusable prompt that another AI can follow
 - force the AI to ask the right clarification questions instead of guessing business-critical fields
+- make the AI admit when it only wrote guidance and did not actually build the workbook in Excel
 
 ## Install for Codex
 
@@ -167,6 +170,7 @@ Read these files before modifying the behavior:
 - `references/clarification-rules-vi.md`
 - `references/dashboard-blueprint-router-vi.md`
 - `references/golden-reference-spec-vi.md`
+- `references/intake-form-vi.md`
 - `references/prompt-template-vi.md`
 - `references/tooling-contract-vi.md`
 - `references/qa-checklist-vi.md`
