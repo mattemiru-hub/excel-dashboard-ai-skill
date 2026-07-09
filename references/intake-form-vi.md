@@ -2,6 +2,8 @@
 
 File này là form intake tối thiểu mà AI nên dùng ở lần build đầu tiên cho một dataset lạ.
 
+Phản hồi đầu tiên nên đi theo `references/first-response-contract-vi.md`.
+
 ## Mục tiêu
 
 Buộc AI hỏi đủ để hiểu:
