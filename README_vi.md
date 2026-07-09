@@ -12,6 +12,7 @@
 - Dùng DAX measure cho KPI và logic visual
 - Dùng PivotTable + PivotChart cho các visual chính
 - Bắt AI intake trước khi build dashboard lần đầu
+- Có form intake chuẩn để AI hỏi đúng những câu cốt lõi
 - Nếu dữ liệu lạ, buộc AI chọn đúng blueprint dashboard trước
 - Nói rõ agent phải có những capability nào thì mới build dashboard thật được
 - Tạo bộ slicer rõ ràng, dễ lọc, dễ đọc
@@ -30,6 +31,7 @@ Dùng skill này khi bạn muốn:
 - audit các lỗi UX như slicer, màu chart, guide card, zoom, workbook visibility
 - tạo prompt mẫu để người khác gõ lại và ra kết quả cùng style
 - ép AI phải hỏi lại đúng các mapping quan trọng trước khi build
+- buộc AI nói rõ khi nó chưa thật sự build workbook trong Excel mà mới chỉ dừng ở mức hướng dẫn
 
 ## Cách dùng nhanh
 
@@ -60,6 +62,7 @@ Dùng skill này khi bạn muốn:
 - `references/golden-reference-spec-vi.md`: contract về giao diện và UX
 - `references/clarification-rules-vi.md`: luật để AI tự hỏi lại trước khi đoán
 - `references/dashboard-blueprint-router-vi.md`: cách AI chọn kiểu dashboard phù hợp
+- `references/intake-form-vi.md`: form intake chuẩn trước khi build
 - `references/prompt-template-vi.md`: prompt mẫu bằng tiếng Việt
 - `references/tooling-contract-vi.md`: bộ tool bắt buộc và các shortcut bị cấm
 - `references/qa-checklist-vi.md`: checklist audit trước khi giao file
