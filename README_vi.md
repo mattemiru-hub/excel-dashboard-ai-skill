@@ -11,6 +11,9 @@
 - Dùng Data Model / Power Pivot để tạo quan hệ bảng
 - Dùng DAX measure cho KPI và logic visual
 - Dùng PivotTable + PivotChart cho các visual chính
+- Bắt AI intake trước khi build dashboard lần đầu
+- Nếu dữ liệu lạ, buộc AI chọn đúng blueprint dashboard trước
+- Nói rõ agent phải có những capability nào thì mới build dashboard thật được
 - Tạo bộ slicer rõ ràng, dễ lọc, dễ đọc
 - Căn chỉnh dashboard để nhìn gọn ở mức zoom 75%
 - Tự hỏi lại các câu cần thiết khi workbook còn mơ hồ, thay vì đoán bừa
@@ -20,7 +23,9 @@
 Dùng skill này khi bạn muốn:
 
 - rebuild một dashboard Excel từ raw data
+- dùng cho user chưa biết rõ cần chart gì
 - biến file đang là report thành dashboard refreshable
+- ép AI chọn đúng kiểu dashboard cho dataset lạ
 - ép AI đi theo một visual contract có sẵn
 - audit các lỗi UX như slicer, màu chart, guide card, zoom, workbook visibility
 - tạo prompt mẫu để người khác gõ lại và ra kết quả cùng style
@@ -32,7 +37,8 @@ Dùng skill này khi bạn muốn:
 2. Mở workbook cần làm dashboard
 3. Gọi Codex với cú pháp `$excel-dashboard-ai-skill`
 4. Mô tả mong muốn của bạn: KPI nào cần có, field nào cần slicer, bố cục mong muốn
-5. Để skill rebuild theo thứ tự:
+5. Nếu bạn chưa biết cần dashboard kiểu gì, để skill đề xuất blueprint trước rồi bạn chọn
+6. Để skill rebuild theo thứ tự:
    - Power Query
    - Data Model / Power Pivot
    - DAX measures
@@ -53,7 +59,9 @@ Dùng skill này khi bạn muốn:
 - `SKILL.md`: quy tắc vận hành của skill
 - `references/golden-reference-spec-vi.md`: contract về giao diện và UX
 - `references/clarification-rules-vi.md`: luật để AI tự hỏi lại trước khi đoán
+- `references/dashboard-blueprint-router-vi.md`: cách AI chọn kiểu dashboard phù hợp
 - `references/prompt-template-vi.md`: prompt mẫu bằng tiếng Việt
+- `references/tooling-contract-vi.md`: bộ tool bắt buộc và các shortcut bị cấm
 - `references/qa-checklist-vi.md`: checklist audit trước khi giao file
 - `examples/README.md`: ví dụ áp dụng skill trong tình huống thực tế
 - `sample-output/README.md`: mô tả gói bàn giao mẫu khi skill hoàn thành tốt
