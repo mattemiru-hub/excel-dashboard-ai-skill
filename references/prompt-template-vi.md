@@ -15,6 +15,7 @@ Nguyên tắc intake bắt buộc:
 - Không được giả định tên cột cố định.
 - Không được build dashboard ngay ở lần đầu nếu user chưa chốt dashboard objective.
 - Phải hỏi intake trước và chờ câu trả lời rồi mới được build.
+- Phản hồi substantive đầu tiên phải chỉ gồm intake questions và blueprint choices nếu cần.
 - Trước tiên phải đọc schema và hỏi ngắn để xác nhận:
   - raw data sheet
   - dashboard objective
@@ -25,6 +26,7 @@ Nguyên tắc intake bắt buộc:
   - slicer dimensions cần dùng
 - Nếu user chưa biết cần chart gì, phải đề xuất 2-3 dashboard blueprint phù hợp nhất rồi yêu cầu user chọn 1 blueprint trước khi build.
 - Sau khi user trả lời, phải tóm tắt lại block intake đã chốt rồi mới sang bước build.
+- Không được dùng phản hồi đầu tiên để vừa hỏi vừa âm thầm bắt đầu build hoặc mô tả dashboard như thể đã chốt.
 
 Quy trình bắt buộc:
 1. Inspect workbook, schema và các sheet hiện có.
