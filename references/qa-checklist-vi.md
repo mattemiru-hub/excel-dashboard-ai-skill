@@ -2,6 +2,19 @@
 
 Dùng checklist này trước khi chốt workbook:
 
+## Intake và logic build
+
+- Đã hỏi intake ở lần build đầu tiên trên dataset lạ
+- Đã chốt raw data sheet
+- Đã chốt dashboard objective
+- Đã chốt dashboard blueprint
+- Đã chốt actual metric field
+- Đã chốt target field nếu dashboard cần target vs actual
+- Đã chốt slicer dimensions chính
+- Nếu user chưa rõ chart cần gì, AI đã đề xuất 2-3 blueprint trước khi build
+- Có intake summary ngắn trước hoặc cùng lúc với lúc build
+- Không có dấu hiệu AI build trước rồi mới quay lại hỏi
+
 ## Data và model
 
 - Đếm số query
