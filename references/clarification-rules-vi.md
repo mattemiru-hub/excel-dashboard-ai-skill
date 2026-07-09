@@ -13,6 +13,8 @@ Vì vậy, ở lần build đầu tiên trên một dataset lạ, AI phải mặ
 - chốt blueprint phân tích trước
 - rồi mới được build query, measure, PivotTable, PivotChart, slicer, và dashboard
 
+Form intake mặc định nên lấy từ `references/intake-form-vi.md`.
+
 ## Khi nào phải hỏi lại
 
 AI phải dừng và hỏi lại nếu gặp một trong các trường hợp sau:
@@ -54,6 +56,17 @@ Khi cần hỏi lại, AI nên hỏi theo thứ tự:
 7. slicer dimensions
 8. giữ dashboard cũ hay rebuild
 
+## Cơ chế fail-safe
+
+Nếu đây là lần build đầu tiên trên dataset lạ, AI phải coi việc hỏi intake là điều kiện bắt buộc để được phép build.
+
+Không được lấy các lý do sau để bỏ qua intake:
+
+- tên cột nhìn quen
+- dữ liệu có vẻ giống sales
+- user chưa nêu rõ chart nhưng workbook có đủ cột số
+- AI nghĩ mình đã đoán được objective
+
 ## Nếu user chưa biết cần chart gì
 
 AI không được tự nhảy vào build dashboard sales mặc định.
@@ -86,6 +99,17 @@ AI nên dùng câu ngắn, cụ thể, ít mở rộng:
 7. Với workbook này, bạn muốn dùng những field nào làm slicer?
 8. Bạn muốn giữ dashboard hiện tại để polish hay rebuild lại từ đầu?
 
+Sau khi user trả lời, AI nên tóm tắt lại 1 block xác nhận trước khi build:
+
+- raw sheet
+- objective
+- blueprint
+- date field
+- actual field
+- target field nếu có
+- slicers
+- rebuild hay polish
+
 ## Nguyên tắc hỏi
 
 - chỉ hỏi những gì thực sự chặn việc làm tiếp
@@ -93,6 +117,7 @@ AI nên dùng câu ngắn, cụ thể, ít mở rộng:
 - nếu chỉ thiếu một mapping, chỉ hỏi đúng một mapping đó
 - không hỏi lại những thứ đã được golden reference cố định
 - sau khi user trả lời, AI phải bám đúng câu trả lời đó trong toàn bộ phần build
+- nếu user trả lời thiếu, AI phải hỏi bù đúng phần còn thiếu thay vì tự đoán tiếp
 
 ## Quy tắc dừng
 
@@ -105,5 +130,6 @@ Nếu chưa rõ các mapping bắt buộc, AI không được:
 - tự chọn dashboard blueprint theo cảm tính rồi build luôn
 - tự tạo chart chỉ vì thấy cột có vẻ hợp lý
 - tự quyết định slicer mặc định nếu user chưa chốt objective
+- tự nói như thể đã được intake đầy đủ khi thực tế chưa hỏi
 
 Phải hỏi lại trước rồi mới làm tiếp.
