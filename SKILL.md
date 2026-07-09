@@ -9,6 +9,7 @@ description: Build premium Excel executive dashboards inside Excel using Power Q
 
 - Treat the approved local dashboard as the visual contract.
 - Read `references/clarification-rules-vi.md` before mapping fields or rebuilding structure.
+- Read `references/first-response-contract-vi.md` before replying to a first-build request on an unfamiliar dataset.
 - Read `references/intake-form-vi.md` before the first build on an unfamiliar dataset.
 - Read `references/dashboard-blueprint-router-vi.md` before choosing what the dashboard should analyze.
 - Read `references/golden-reference-spec-vi.md` before rebuilding or polishing any workbook.
@@ -20,18 +21,19 @@ description: Build premium Excel executive dashboards inside Excel using Power Q
 
 1. Inspect the workbook, active sheets, schema, existing queries, model tables, relationships, measures, PivotTables, PivotCharts, slicers, and visible workbook state.
 2. Run the clarification gate from `references/clarification-rules-vi.md` before mapping fields or making structural workbook changes.
-3. On the first build for an unfamiliar dataset, ask the intake questions from `references/intake-form-vi.md` and wait for answers before building.
-4. If the user has not clearly said what the dashboard should analyze, use `references/dashboard-blueprint-router-vi.md` to propose 2-3 dashboard blueprints and ask the user to choose one.
-5. Map source columns to business roles instead of assuming fixed headers. Preserve the approved design language even when the input schema changes.
-6. Build or repair the data stack in this exact order: Power Query -> Data Model / Power Pivot -> DAX measures -> PivotTables -> PivotCharts -> slicers -> dashboard layer.
-7. Follow the mandatory build stack and forbidden shortcuts in `references/tooling-contract-vi.md`.
-8. Keep all main visuals sourced from Power Query outputs, Data Model measures, and PivotTable / PivotChart objects. Do not replace the main dashboard with normal charts.
-9. Apply the approved executive layout and styling rules from `references/golden-reference-spec-vi.md`.
-10. Run the reusable scripts when they help:
+3. On the first build for an unfamiliar dataset, follow `references/first-response-contract-vi.md`: the first substantive response must ask intake questions only, optionally propose blueprint choices, and then stop to wait for answers.
+4. Ask the intake questions from `references/intake-form-vi.md` and wait for answers before building.
+5. If the user has not clearly said what the dashboard should analyze, use `references/dashboard-blueprint-router-vi.md` to propose 2-3 dashboard blueprints and ask the user to choose one.
+6. Map source columns to business roles instead of assuming fixed headers. Preserve the approved design language even when the input schema changes.
+7. Build or repair the data stack in this exact order: Power Query -> Data Model / Power Pivot -> DAX measures -> PivotTables -> PivotCharts -> slicers -> dashboard layer.
+8. Follow the mandatory build stack and forbidden shortcuts in `references/tooling-contract-vi.md`.
+9. Keep all main visuals sourced from Power Query outputs, Data Model measures, and PivotTable / PivotChart objects. Do not replace the main dashboard with normal charts.
+10. Apply the approved executive layout and styling rules from `references/golden-reference-spec-vi.md`.
+11. Run the reusable scripts when they help:
    - `scripts/apply_golden_reference_style.py <workbook-path>`
    - `scripts/export_dashboard_preview.ps1 -WorkbookPath <workbook-path>`
    - `scripts/install_local_skill.ps1` to mirror this repo into the local Codex skills folder
-11. Before finalizing, self-audit that the intake questions were actually asked and answered. Then finish with the QA checks in `references/qa-checklist-vi.md`, and save a stable local copy if the workbook lives in OneDrive or another cloud-synced path.
+12. Before finalizing, self-audit that the intake questions were actually asked and answered, and that the first substantive response respected `references/first-response-contract-vi.md`. Then finish with the QA checks in `references/qa-checklist-vi.md`, and save a stable local copy if the workbook lives in OneDrive or another cloud-synced path.
 
 ## Clarification Gate
 
@@ -57,6 +59,7 @@ Do not make structural workbook changes until the required clarifications are re
 Do not guess low-confidence mappings for business-critical fields.
 Do not create the first dashboard layout for an unfamiliar dataset until the intake questions are answered or the user explicitly approves one proposed blueprint.
 Do not silently skip the intake form just because the workbook contains familiar column names.
+Do not let the first substantive response include build output, dashboard recommendations, or implementation steps beyond the intake questions and optional blueprint choices.
 If confidence is below high confidence, stop and ask.
 
 ## Required Question Style
@@ -81,6 +84,7 @@ When possible, group the intake questions into one short block so the user can a
 - Preserve a Power BI-like executive experience, not a spreadsheet-looking report.
 - Always confirm the dashboard objective and blueprint before the first build on an unfamiliar dataset.
 - On the first build for an unfamiliar dataset, asking the intake questions is mandatory, not optional.
+- On the first build for an unfamiliar dataset, the first substantive response must be questions-only, not build-first.
 - Keep the left slicer rail, top KPI row, section bars, and five-chart layout unless the user explicitly asks for a different composition.
 - Use Power Query, Data Model / Power Pivot, DAX measures, PivotTables, PivotCharts, and slicers as the mandatory main stack.
 - Do not use normal charts, worksheet-formula-only KPI logic, or non-model PivotTables as shortcuts for the main dashboard.
